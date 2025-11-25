@@ -1,0 +1,130 @@
+/* src/pages/Taches.css */
+
+.taches-page {
+  --background: #f5f5f5;
+}
+
+.course-selector-card {
+  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-selector-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.progress-card {
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.structure-card {
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Accordéons et structure */
+ion-accordion {
+  background: white;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+ion-accordion:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+ion-accordion ion-item {
+  --background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+ion-accordion ion-item:hover {
+  --background: rgba(0, 0, 0, 0.02);
+}
+
+/* Amélioration des checkboxes */
+ion-checkbox {
+  --size: 22px;
+  --checkbox-background-checked: var(--ion-color-success);
+  --border-radius: 4px;
+  --border-width: 2px;
+  transition: all 0.2s ease;
+}
+
+ion-checkbox:hover {
+  transform: scale(1.1);
+}
+
+/* Items de la liste */
+ion-item {
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Bordures de couleur pour hiérarchie */
+ion-item[style*="border-left"] {
+  border-left-width: 3px;
+  border-left-style: solid;
+  margin-left: 0;
+}
+
+/* Badges de progression */
+ion-badge {
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* État vide */
+.empty-state {
+  text-align: center;
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.empty-state p {
+  font-size: 18px;
+  color: var(--ion-color-medium);
+  margin-bottom: 20px;
+}
+
+/* Animation pour les accordéons */
+ion-accordion.accordion-expanding,
+ion-accordion.accordion-expanded {
+  background: #fafafa;
+}
+
+/* Style pour les titres avec icônes */
+.unit-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit-icon {
+  font-size: 18px;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Amélioration responsive */
+@media (max-width: 768px) {
+  ion-accordion {
+    margin-bottom: 2px;
+  }
+
+  ion-item {
+    --padding-start: 8px;
+    --inner-padding-end: 8px;
+  }
+}

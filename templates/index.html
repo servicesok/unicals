@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicals - File Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📁 Unicals File Viewer</h1>
+            {% if current_path %}
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                {% set parts = current_path.split('/') %}
+                {% for i in range(parts|length) %}
+                    {% if parts[i] %}
+                        / <a href="/?path={{ '/'.join(parts[:i+1]) }}">{{ parts[i] }}</a>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </header>
+
+        <main>
+            {% if is_listing %}
+                <!-- Directory listing -->
+                <div class="file-list">
+                    <h2>📂 Directory Contents</h2>
+                    {% if items|length == 0 %}
+                        <p class="empty-message">This directory is empty</p>
+                    {% else %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in items %}
+                                <tr>
+                                    <td>
+                                        <a href="/?path={{ item.path }}">
+                                            {% if item.is_dir %}
+                                                📁 {{ item.name }}
+                                            {% else %}
+                                                📄 {{ item.name }}
+                                            {% endif %}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {% if item.is_dir %}
+                                            Directory
+                                        {% else %}
+                                            File
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if not item.is_dir %}
+                                            {{ "%.2f"|format(item.size / 1024) }} KB
+                                        {% else %}
+                                            -
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </div>
+            {% else %}
+                <!-- File viewer -->
+                <div class="file-viewer">
+                    <div class="file-header">
+                        <h2>📄 {{ file_path.split('/')[-1] }}</h2>
+                        {% if file_size %}
+                        <span class="file-info">Size: {{ "%.2f"|format(file_size / 1024) }} KB</span>
+                        {% endif %}
+                        {% if download_link %}
+                        <a href="{{ download_link }}" class="download-btn">⬇️ Download</a>
+                        {% endif %}
+                    </div>
+
+                    {% if error %}
+                        <div class="error">
+                            {{ error }}
+                        </div>
+                    {% elif content %}
+                        <pre><code class="language-{{ language }}">{{ content }}</code></pre>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>Unicals File Viewer - Simple and secure file browsing</p>
+        </footer>
+    </div>
+
+    <script>
+        // Highlight code blocks
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
+</body>
+</html>

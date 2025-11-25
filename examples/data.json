@@ -1,0 +1,15 @@
+{
+    "name": "Unicals",
+    "version": "1.0.0",
+    "description": "A simple file viewer application",
+    "features": [
+        "Directory browsing",
+        "Syntax highlighting",
+        "Secure file access",
+        "Responsive design"
+    ],
+    "author": {
+        "name": "Developer",
+        "email": "dev@example.com"
+    }
+}

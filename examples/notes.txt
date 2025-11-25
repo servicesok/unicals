@@ -1,0 +1,16 @@
+Unicals File Viewer - Notes
+===========================
+
+This is a simple text file to demonstrate the file viewer.
+
+Features:
+- Easy to use interface
+- Beautiful design
+- Secure file handling
+- Multiple file format support
+
+TODO:
+- Add search functionality
+- Implement file editing
+- Add user authentication
+- Support more file types

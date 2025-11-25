@@ -1,0 +1,30 @@
+.study-timer-card {
+  text-align: center;
+}
+
+.duration-selector {
+  margin-bottom: 16px;
+}
+
+.duration-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.timer-display {
+  margin: 24px 0;
+}
+
+.timer-display h1 {
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}

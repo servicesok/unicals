@@ -1,0 +1,441 @@
+.courses-content {
+  --background: #f5f7fa;
+}
+
+/* === FORM CARD === */
+.form-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-input {
+  --background: #f8f9fa;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  margin-bottom: 12px;
+}
+
+.threshold-label {
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* === SORT CARD === */
+.sort-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.sort-card ion-card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.sort-label {
+  font-weight: 600;
+  color: #475569;
+  min-width: 80px;
+}
+
+.sort-select {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* === COURSES LIST (container legacy – OK si non utilisé) === */
+.courses-list {
+  background: white;
+  border-radius: 20px; /* <-- arrondi plus visible */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 20px 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* === ITEMS === */
+.course-item {
+  --background: white;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --inner-padding-end: 0;
+  margin-bottom: 16px;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  position: relative; /* pour le .dot */
+}
+
+.course-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.course-code {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0095eb;
+  margin: 0;
+}
+
+.course-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #334155;
+  margin: 8px 0;
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px; /* mieux avec le nouveau look */
+  opacity: .8;
+}
+
+/* Petit point coloré à gauche de chaque item */
+.course-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ion-color-primary);
+  margin-right: 12px;
+  box-shadow: 0 0 0 4px rgba(0,149,235,.08);
+}
+
+/* === LOADING & EMPTY STATES === */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.loading-container p {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.empty-card {
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.empty-text {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* === BADGES === */
+ion-badge {
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* === ITEM SLIDING ANIMATIONS === */
+ion-item-sliding {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+ion-item-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* === RANGE STYLING === */
+ion-range {
+  --bar-background: #e2e8f0;
+  --bar-background-active: var(--ion-color-primary);
+  --bar-height: 6px;
+  --bar-border-radius: 3px;
+  --knob-background: var(--ion-color-primary);
+  --knob-size: 24px;
+  --pin-background: var(--ion-color-primary);
+  --pin-color: white;
+  padding: 10px 0;
+}
+
+/* ===== Hero header ===== */
+.hero-toolbar {
+  --background: transparent;                  
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  color: #fff;
+  border: 0;
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+
+/* Bande sous le toolbar qui contient les stats */
+.hero-stats {
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  padding: 10px 16px 18px;                    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  color: #fff;
+}
+
+.hero-stats .stat {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.hero-stats .stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hero-stats .stat-label {
+  font-size: .85rem;
+  opacity: .95;
+}
+
+/* Top actions: search + chips */
+.top-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+
+.searchbar {
+  --box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  --background: #ffffff;
+  border-radius: 12px;
+}
+
+.sort-chips {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ghost-btn {
+  --background: rgba(255,255,255,.2);
+  --border-radius: 10px;
+  --color: #fff;
+}
+
+/* === CARTE LISTE DES COURS (meme taille que carte formulaire) === */
+.list-card {
+  background: white;
+  border-radius: 16px;                 /* même rayon que .form-card */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.list-card .inner {
+  box-shadow: none;
+  background: transparent;
+}
+
+/* En-tête de la liste */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.list-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Contenu repliable avec animation */
+.collapsible {
+  overflow: hidden;
+  transition: max-height 260ms ease, opacity 200ms ease, padding 200ms ease;
+}
+
+.collapsible.open {
+  max-height: 2000px;   /* suffisamment grand pour la liste */
+  opacity: 1;
+  padding-top: 8px;
+}
+
+.collapsible.closed {
+  max-height: 0;
+  opacity: 0.0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.courses-list-inner {
+  background: transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .form-title { font-size: 1.1rem; }
+  .sort-card ion-card-content { flex-direction: column; align-items: flex-start; }
+  .sort-select { width: 100%; max-width: 100%; }
+  .course-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  .hero-stats { grid-template-columns: 1fr; }   /* empile les stats sur petit écran */
+  .top-actions { grid-template-columns: 1fr; }
+}
+
+/* === DARK MODE SUPPORT === */
+@media (prefers-color-scheme: dark) {
+  .courses-content { --background: #0f172a; }
+
+  .form-card,
+  .sort-card,
+  .course-item,
+  .empty-card,
+  .list-card { background: #1e293b; }
+
+  .form-title,
+  .course-title {
+    color: #0c2845;
+  }
+  .list-header h2 { color: #f1f5f9; }
+
+  .sort-label,
+  .threshold-label { color: #cbd5e1; }
+
+  .course-code { color: #60a5fa; }
+
+  .meta-note,
+  .empty-text,
+  .loading-container { color: #94a3b8; }
+
+  .empty-icon { color: #475569; }
+
+  .custom-input {
+    --background: #0f172a;
+    --color: #f1f5f9;
+  }
+}
+
+/* === FIX MOBILE : rendre les items compacts et non centrés === */
+
+@media (max-width: 768px) {
+
+  .course-item {
+    border-radius: 14px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 64px !important;
+    padding: 12px !important;
+  }
+
+  /* Le dot reste sur la gauche */
+  .course-item .dot {
+    margin-right: 12px !important;
+  }
+
+  /* Le texte prend l’espace */
+  .course-item ion-label {
+    flex: 1 1 auto !important;
+    margin-right: 8px !important;
+  }
+
+  /* Le bouton trophée reste à droite, petite taille */
+  .course-item ion-button {
+    flex: 0 0 auto !important;
+    margin-left: 6px !important;
+    --padding-start: 6px !important;
+    --padding-end: 6px !important;
+  }
+
+  /* Le header (code + badge) doit rester sur 1 ligne compacte */
+  .course-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Le titre du cours ne doit JAMAIS dépasser */
+  .course-title {
+    margin: 4px 0 0 !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* hint pour liste cours */
+.swipe-hint {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .swipe-hint {
+    color: #cbd5e1;
+  }
+}

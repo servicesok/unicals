@@ -1,0 +1,145 @@
+/* ============================
+   🎨 STYLE PREMIUM UNICAL
+   UploadCourse.css
+   ============================ */
+
+/* ---- Header Card ---- */
+.upload-header-card {
+  background: linear-gradient(
+    135deg,
+    var(--ion-color-primary),
+    var(--ion-color-primary-shade)
+  );
+  border-radius: 18px;
+  color: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Dropzone ---- */
+.drop-zone {
+  border: 2px dashed var(--ion-color-primary);
+  border-radius: 18px;
+  padding: 50px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.25s ease;
+  background: rgba(var(--ion-color-primary-rgb), 0.04);
+}
+
+.drop-zone:hover {
+  background: rgba(var(--ion-color-primary-rgb), 0.08);
+}
+
+.drop-zone.dragging {
+  background: rgba(var(--ion-color-primary-rgb), 0.15);
+  border-color: var(--ion-color-primary-shade);
+}
+
+/* ---- Dropzone Content ---- */
+.upload-icon {
+  font-size: 80px;
+  color: var(--ion-color-primary);
+  margin-bottom: 16px;
+}
+
+.upload-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.upload-subtitle {
+  color: var(--ion-color-medium);
+  margin: 8px 0;
+}
+
+.upload-info {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+/* ---- Choose File Button ---- */
+.choose-file-btn {
+  margin-top: 12px;
+  border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+}
+
+/* ---- File Preview Card ---- */
+.file-preview-card {
+  margin-top: 20px;
+  border-radius: 18px;
+  transition: box-shadow 0.3s ease;
+}
+
+.file-preview-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.file-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-preview-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.file-preview-icon {
+  font-size: 48px;
+  color: var(--ion-color-primary);
+}
+
+.file-preview-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-size: 18px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.file-size {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+}
+
+/* ---- Chip ---- */
+.ready-chip {
+  margin-bottom: 16px;
+}
+
+/* ---- Upload Progress ---- */
+.upload-progress {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  border-radius: 12px;
+}
+
+.upload-progress-text {
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+}
+
+.upload-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* ---- Upload Button ---- */
+.upload-btn {
+  margin-top: 16px;
+  height: 50px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+

@@ -1,0 +1,143 @@
+.forgot-page {
+   --background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   min-height: 100vh;
+   text-align: center;
+}
+
+.forgot-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.forgot-page ion-text h1 {
+   font-size: 28px;
+   font-weight: 700;
+   color: #fff;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.forgot-page ion-text p {
+   text-align: center;
+   font-size: 15px;
+   color: rgba(255, 255, 255, 0.9);
+   margin-bottom: 25px;
+}
+
+/* Champ email */
+.forgot-page ion-item {
+   --background: #ffffff;
+   --border-radius: 12px;
+   --padding-start: 15px;
+   --inner-padding-end: 15px;
+   margin-bottom: 20px;
+   border: 2px solid transparent;
+   max-width: 400px;
+   width: 100%;
+   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+}
+
+.forgot-page ion-item.item-has-focus {
+   border-color: #667eea;
+   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Bouton spécifique */
+.forgot-page .forgot-button {
+   --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   --border-radius: 12px;
+   --box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+   font-weight: 600;
+   font-size: 16px;
+   text-transform: none;
+   height: 50px;
+   max-width: 400px;
+   width: 100%;
+   margin-top: 10px;
+   transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.forgot-page .forgot-button:hover {
+   transform: translateY(-2px);
+   --box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Liens */
+.forgot-page ion-router-link {
+   color: #fff;
+   font-weight: 600;
+   text-decoration: none;
+   transition: color 0.2s ease;
+}
+
+.forgot-page ion-router-link:hover {
+   color: #c3b2ff;
+   text-decoration: underline;
+}
+
+/* Fond animé */
+.forgot-page::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background:
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+   animation: pulse 15s ease-in-out infinite;
+   z-index: 0;
+}
+
+@keyframes pulse {
+
+   0%,
+   100% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+}
+
+.forgot-page>* {
+   position: relative;
+   z-index: 1;
+}
+
+.forme-forgot {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   background: white;
+   border-radius: 20px;
+   padding: 40px 30px;
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+   max-width: 420px;
+   width: 90%;
+   z-index: 1;
+   animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+   from {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}

@@ -1,0 +1,36 @@
+/* === FORCER LE GRADIENT ANIMÉ === */
+ion-content {
+   --background: none !important;
+   background: linear-gradient(-45deg, #f6f6f6, #71c3f7, #2c6cbc, #23d5ab);
+   background-size: 300% 300% !important;
+   animation: gradientFlow 15s ease infinite !important;
+   position: relative;
+   z-index: 0;
+}
+
+/* === ANIMATION FLUIDE === */
+@keyframes gradientFlow {
+   0% {
+      background-position: 0% 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+/* === CARTE EN VERRE SUR LE GRADIENT === */
+.creation-card,
+.login-card {
+   position: relative;
+   z-index: 1;
+   background: rgba(255, 255, 255, 0.94) !important;
+   backdrop-filter: blur(16px);
+   -webkit-backdrop-filter: blur(16px);
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}

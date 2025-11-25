@@ -1,0 +1,204 @@
+.profile-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   background: linear-gradient(-45deg, #71c3f7, #2c6cbc, #97d9f3, #f6f6f6);
+   background-size: 300% 300%;
+   animation: gradientShift 10s ease infinite;
+   min-height: 100vh;
+   padding-top: 3rem;
+}
+
+@keyframes gradientShift {
+   0% {
+      background-position: 0% 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+.profile-page ion-list[inset] {
+   background: rgba(255, 255, 255, 0.15);
+   border-radius: 20px;
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   width: 90%;
+   max-width: 420px;
+   margin: 1.5rem auto;
+   padding: 1rem;
+   box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+   transition: all 0.3s ease-in-out;
+}
+
+.profile-avatar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1.5rem;
+   margin-bottom: 1.2rem;
+}
+
+.profile-avatar img {
+   border-radius: 50%;
+   box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+   width: 100px;
+   height: 100px;
+   border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-title {
+   color: #ffffff;
+   font-size: 1.6rem;
+   font-weight: 700;
+   text-align: center;
+   text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+}
+
+.profile-email {
+   color: #e2e8f0;
+   text-align: center;
+   margin-bottom: 1rem;
+   text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+ion-item {
+   --background: rgba(255, 255, 255, 0.9);
+   --border-radius: 12px;
+   --color: #000;
+   margin-bottom: 0.8rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   transition: all 0.3s ease;
+}
+
+ion-item:focus-within {
+   box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+   transform: translateY(-2px);
+}
+
+ion-label {
+   color: #0f172a !important;
+   font-weight: 600;
+}
+
+ion-input {
+   --color: #000;
+   --placeholder-color: #555;
+}
+
+.profile-edit-form {
+   background: rgba(255, 255, 255, 0.9);
+   border-radius: 20px;
+   backdrop-filter: blur(18px);
+   padding: 2rem;
+   width: 90%;
+   max-width: 450px;
+   box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+   margin-top: 1.5rem;
+   animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(10px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.profile-edit-form ion-item {
+   --background: rgba(255, 255, 255, 0.95);
+   margin-bottom: 1.2rem;
+   border-radius: 12px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-edit-form ion-button {
+   margin-top: 1.5rem;
+   width: 100%;
+   --background: linear-gradient(90deg, #38bdf8, #2563eb);
+   box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+   font-weight: 600;
+   text-transform: none;
+   transition: 0.3s;
+}
+
+.profile-edit-form ion-button:hover {
+   transform: scale(1.02);
+   box-shadow: 0 0 25px rgba(37, 99, 235, 0.8);
+}
+
+ion-toolbar {
+   --background: rgba(255, 255, 255, 0.05) !important;
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   border: none;
+}
+
+ion-title {
+   color: #fff !important;
+   font-weight: 700;
+   font-size: 1.3rem;
+   text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+   text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+   .profile-page {
+      padding-top: 2rem;
+   }
+
+   ion-button {
+      width: 95%;
+   }
+}
+
+.profile-page.edit-mode {
+   justify-content: center;
+   padding-top: 0;
+}
+
+.profile-edit-form {
+   margin: 0 auto;
+}
+
+.modification {
+   color: #fff;
+   font-size: 1.2rem;
+   margin-right: 6px;
+}
+
+ion-button.modifier-profil {
+   --background: linear-gradient(90deg, #38bdf8, #2563eb);
+   box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+   font-weight: 600;
+   text-transform: none;
+   letter-spacing: 0.3px;
+   border-radius: 14px;
+   width: 90%;
+   max-width: 420px;
+   margin: 1.5rem auto;
+   display: block;
+   transition: all 0.3s ease;
+}
+
+ion-button.modifier-profil:hover {
+   transform: scale(1.03);
+   box-shadow: 0 0 25px rgba(37, 99, 235, 0.9);
+}
+
+ion-button.modifier-profil:active {
+   transform: scale(0.98);
+   box-shadow: 0 0 15px rgba(37, 99, 235, 0.7);
+}

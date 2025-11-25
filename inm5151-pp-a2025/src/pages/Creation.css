@@ -1,0 +1,109 @@
+/* Conteneur principal centré */
+.creation-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 120px;
+}
+
+/* Carte du formulaire */
+.creation-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  /* espace pour le bouton en bas */
+}
+
+/* Logo cercle en haut */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-circle {
+  background-color: #3880ff;
+  /* couleur primaire Ionic */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation de background (si tu gardes ton animated-bg) */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes warpEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scroll fluide pour tout le contenu */
+ion-content {
+  --overflow: auto;
+  --background: transparent;
+  background: linear-gradient(-45deg, #f6f6f6, #71c3f7, #2c6cbc, #23d5ab);
+  scroll-behavior: smooth;
+}
+
+/* Espacement des IonItem */
+ion-item {
+  --inner-padding-end: 0.5rem;
+}
+
+/* Bouton "Déjà un compte ?" centré */
+.creation-card .text-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Ajustement responsive */
+@media (max-height: 700px) {
+  .creation-card {
+    padding: 1.5rem;
+  }
+}
+
+.text-center ion-button {
+  --color: #187488;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.button-creation {
+  --background: #187488;
+  --color: white;
+  --border-radius: 15px;
+  height: 50px;
+  font-weight: 600;
+  text-transform: none;
+}

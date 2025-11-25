@@ -1,0 +1,28 @@
+stages:
+  - test
+  - build
+
+default:
+  image: node:20
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+
+# Étape 1 : Tests unitaires
+unit_tests:
+  stage: test
+  script:
+    - npm ci
+    - npm run test.unit
+
+# Étape 2 : Build Vite
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week

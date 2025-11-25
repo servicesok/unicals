@@ -1,0 +1,14 @@
+
+.header-finances {
+    --background: linear-gradient(90deg, #0062E6 0%, #33AEFF 100%) !important;
+    --color: white !important;
+}
+
+.header-finances ion-title {
+    color: white !important;
+}
+
+.header-finances ion-menu-button, 
+.header-finances ion-button {
+    color: white !important;
+}

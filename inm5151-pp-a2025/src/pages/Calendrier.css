@@ -1,0 +1,107 @@
+.button-34 {
+  background: #5E5DF0 !important;
+  border-radius: 999px !important;
+  box-shadow: #5E5DF0 0 10px 20px -10px !important;
+  box-sizing: border-box;
+  color: #FFFFFF !important;
+  cursor: pointer;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 12px;
+  /* ← réduit la taille du texte / icône */
+  font-weight: 700;
+  line-height: 16px;
+  /* ← réduit la hauteur du texte */
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 4px 10px;
+  /* ← réduit l’espace interne */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0 !important;
+}
+
+.button-34:hover {
+  --background: #4b49c6 !important;
+  background: #4b49c6 !important;
+  box-shadow: #4b49c6 0 10px 20px -10px !important;
+}
+
+ion-modal.fullscreen-modal {
+  --width: 100vw !important;
+  --height: 100vh !important;
+  --border-radius: 0 !important;
+  --box-shadow: none !important;
+}
+
+/* Style pour l'arriere plan sombre de la fenêtre du plein écran */
+ion-modal.fullscreen-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 1) !important;
+  opacity: 1 !important;
+}
+
+/* Style pour le contenu de la fenêtre du plein écran */
+ion-modal.fullscreen-modal::part(content) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+/* Assurer que le contenu du modal prenne tout l'espace */
+ion-modal.fullscreen-modal ion-content {
+  --background: white;
+}
+
+/* Style du header de la fenêtre du plein écran*/
+ion-modal.fullscreen-modal ion-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre de défilement personnalisée pour la grille horaire */
+ion-modal.fullscreen-modal ion-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Style de la "piste" de la barre de défilement*/
+ion-modal.fullscreen-modal ion-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Style du "pouce" de la barre de défilement */
+ion-modal.fullscreen-modal ion-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Style au survol du pouce*/
+ion-modal.fullscreen-modal ion-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.calendar-content {
+  --overflow: auto;
+  height: 100%;
+  display: block;
+}
+
+.fullscreen-modal .modal-content {
+  --overflow: auto;
+  height: 100%;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5px;
+  width: 100%;
+  overflow: hidden;
+}

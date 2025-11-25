@@ -1,0 +1,96 @@
+ion-toolbar {
+   --background: transparent !important;
+   --border-width: 0 !important;
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+}
+
+ion-title {
+   color: white !important;
+   font-weight: 700;
+   font-size: 1.3rem;
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+   text-align: center;
+}
+
+.text-center {
+   text-align: center !important;
+}
+
+.font-bold {
+   font-weight: 700 !important;
+}
+
+.login-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: calc(100vh - 56px);
+   padding: 1rem;
+}
+
+.login-card {
+   background: white;
+   border-radius: 16px;
+   padding: 2.5rem;
+   width: 100%;
+   max-width: 400px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+   text-align: center;
+}
+
+.logo-circle {
+   width: 80px;
+   height: 80px;
+   background: linear-gradient(135deg, #d3eef4,
+         #f1eec8);
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto 1.5rem;
+}
+
+.login-card h2 {
+   margin: 1rem 0 1.5rem;
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: #1e293b;
+}
+
+.login-card ion-item {
+   --background: #f8fafc;
+   --border-radius: 12px;
+   margin-bottom: 1.2rem;
+   --padding-start: 1rem;
+   --highlight-color-focused: #d3eef4;
+}
+
+.login-card ion-icon {
+   color: #d3eef4;
+   font-size: 1.3rem;
+}
+
+.login-card ion-button {
+   --border-radius: 12px;
+   height: 50px;
+   text-transform: none;
+   font-weight: 600;
+   margin-top: 1.5rem;
+}
+
+.login-card .text-center ion-button {
+   --color: #187488;
+   text-decoration: underline;
+   font-weight: 500;
+   margin-top: 1rem;
+}
+
+.button-login {
+   --background: #187488;
+   --color: white;
+   --border-radius: 15px;
+   height: 50px;
+   font-weight: 600;
+   text-transform: none;
+}

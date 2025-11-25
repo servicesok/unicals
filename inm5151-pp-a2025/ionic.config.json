@@ -1,0 +1,7 @@
+{
+  "name": "unical",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

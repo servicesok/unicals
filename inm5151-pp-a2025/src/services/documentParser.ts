@@ -233,7 +233,13 @@ async function extractDOCXLinesAdvanced(file: File): Promise<ParsedLine[]> {
 
     const lines: ParsedLine[] = [];
 
-    // Parser le HTML
+    // Parser le HTML avec gestion d'erreur
+    if (typeof DOMParser === 'undefined') {
+      console.warn('[DOCX] DOMParser non disponible, utilisation de regex');
+      // Fallback avec regex si DOMParser n'est pas disponible
+      return extractDOCXWithRegex(result.value);
+    }
+
     const parser = new DOMParser();
     const doc = parser.parseFromString(result.value, 'text/html');
 
@@ -299,6 +305,39 @@ async function extractDOCXLinesAdvanced(file: File): Promise<ParsedLine[]> {
     console.error("Erreur DOCX:", err);
     throw new Error("Impossible de lire ce fichier Word.");
   }
+}
+
+// Fallback pour DOCX avec regex si DOMParser n'est pas disponible
+function extractDOCXWithRegex(html: string): ParsedLine[] {
+  const lines: ParsedLine[] = [];
+
+  // Extraire les balises h1, h2, h3 avec regex
+  const h1Matches = [...html.matchAll(/<h1[^>]*>(.*?)<\/h1>/g)];
+  const h2Matches = [...html.matchAll(/<h2[^>]*>(.*?)<\/h2>/g)];
+  const h3Matches = [...html.matchAll(/<h3[^>]*>(.*?)<\/h3>/g)];
+
+  h1Matches.forEach((match) => {
+    const text = match[1].replace(/<[^>]*>/g, '').trim();
+    if (isValidTitle(text)) {
+      lines.push({ text, level: 1, type: 'chapter' });
+    }
+  });
+
+  h2Matches.forEach((match) => {
+    const text = match[1].replace(/<[^>]*>/g, '').trim();
+    if (isValidTitle(text)) {
+      lines.push({ text, level: 2, type: 'section' });
+    }
+  });
+
+  h3Matches.forEach((match) => {
+    const text = match[1].replace(/<[^>]*>/g, '').trim();
+    if (isValidTitle(text)) {
+      lines.push({ text, level: 3, type: 'subsection' });
+    }
+  });
+
+  return lines;
 }
 
 // ==================================================
@@ -524,8 +563,14 @@ export async function parseDocument(file: File): Promise<CourseProgress> {
     console.log(`[PARSER] ============================================`);
 
     return toCourseProgress(file, roots);
-  } catch (err) {
-    console.error("[PARSER] ❌ Erreur:", err);
-    throw err;
+  } catch (err: any) {
+    console.error("[PARSER] ❌ Erreur détaillée:", err);
+    console.error("[PARSER] Type d'erreur:", typeof err);
+    console.error("[PARSER] Message:", err?.message);
+    console.error("[PARSER] Stack:", err?.stack);
+    console.log(`[PARSER] ============================================`);
+
+    // Rethrow avec un message plus clair
+    throw new Error(`Erreur lors de l'analyse du document: ${err?.message || 'Erreur inconnue'}`);
   }
 }
